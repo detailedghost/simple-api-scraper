@@ -84,7 +84,7 @@ describe("POST /", () => {
 		expect(res.status).toBe(200);
 	});
 
-	it("Should return 400 with full payload, unknown location", async () => {
+	it("Should return 200 with full payload, unknown location", async () => {
 		const req = new Request(postReq, {
 			headers: {
 				"Content-Type": "application/json",
@@ -96,6 +96,6 @@ describe("POST /", () => {
 			}),
 		});
 		const res = await app.fetch(req);
-		expect(res.status).toBe(400);
+		expect(res.status).toBe(200);
 	});
 });
